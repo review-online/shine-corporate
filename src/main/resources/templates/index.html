@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">株式会社SHINE</title>
+    <meta name="description" content="株式会社SHINE公式サイト。八王子でバー・ナイトクラブを運営。お酒を通じて人々により豊かな時間と暮らしを提供します。">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<!-- 固定ヘッダー -->
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="/" th:text="${companyInfo.name}">SHINE</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link active">ホーム</a></li>
+                <li><a href="/message" class="nav-link">代表メッセージ</a></li>
+                <li><a href="/contact" class="nav-link btn-contact">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- ヒーローセクション（PNG背景画像） -->
+<main class="hero">
+    <div class="hero-image">
+        <img th:src="@{/images/hero-main.png}" alt="SHINE バーカウンター" class="hero-bg">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-subtitle">Since 2018</p>
+        <h2 class="hero-title" th:text="${companyInfo.philosophy}">
+            お酒を通じて人々により豊かな時間と暮らしを与える
+        </h2>
+        <p class="hero-tagline">Enriching Lives Through Premium Experiences</p>
+        <div class="hero-buttons">
+            <a href="/message" class="btn btn-primary">代表メッセージ</a>
+            <a href="/contact" class="btn btn-secondary">お問い合わせ</a>
+        </div>
+    </div>
+</main>
+
+<!-- 企業理念セクション -->
+<section class="philosophy-section">
+    <div class="container">
+        <span class="section-label">Philosophy</span>
+        <h2 class="section-title">企業理念</h2>
+        <div class="philosophy-statement">
+            <h3 th:text="${companyInfo.philosophy}">お酒を通じて人々により豊かな時間と暮らしを与える</h3>
+            <p>私たち株式会社SHINEは、バーやナイトクラブという空間を通じて、お客様の人生に特別な瞬間を提供することを使命としています。上質なお酒と洗練されたサービスで、日常を超えた価値ある体験をお届けします。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 事業内容セクション（PNG画像対応） -->
+<section class="business-section">
+    <div class="container">
+        <span class="section-label">Business</span>
+        <h2 class="section-title">事業内容</h2>
+        <div class="business-grid">
+            <!-- バー事業カード -->
+            <div class="business-card">
+                <div class="business-image">
+                    <img th:src="@{/images/bar-interior.png}" alt="BAR SHINE 内装">
+                </div>
+                <div class="business-content">
+                    <div class="business-icon">🍸</div>
+                    <h3>プレミアムバー運営</h3>
+                    <h4>BAR SHINE</h4>
+                    <p>厳選された国内外のウイスキー、ワイン、日本酒を取り揃えた大人のための上質な空間。経験豊富なバーテンダーが、お客様一人ひとりの好みに合わせて最適な一杯をご提案いたします。</p>
+                </div>
+            </div>
+
+            <!-- クラブ事業カード -->
+            <div class="business-card">
+                <div class="business-image">
+                    <img th:src="@{/images/club-interior.png}" alt="CLUB LUXE 内装">
+                </div>
+                <div class="business-content">
+                    <div class="business-icon">🎵</div>
+                    <h3>ナイトクラブ運営</h3>
+                    <h4>CLUB LUXE</h4>
+                    <p>最新の音響・照明設備を備えた、多摩地域最大級のナイトクラブ。国内外の一流DJを招いたイベントから、カジュアルなパーティーまで、幅広いニーズに対応。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 会社概要セクション -->
+<section class="company-section">
+    <div class="container">
+        <span class="section-label">Company</span>
+        <h2 class="section-title">会社概要</h2>
+        <table class="company-table">
+            <tr>
+                <th>会社名</th>
+                <td>
+                    <span th:text="${companyInfo.name}">株式会社SHINE</span><br>
+                    <span style="font-size: 0.9em; color: #999;" th:text="${companyInfo.englishName}">SHINE Corporation</span>
+                </td>
+            </tr>
+            <tr><th>代表取締役</th><td th:text="${companyInfo.representative}">小林 剛</td></tr>
+            <tr><th>設立</th><td th:text="${companyInfo.established}">2018年4月1日</td></tr>
+            <tr><th>資本金</th><td th:text="${companyInfo.capital}">30,000,000円</td></tr>
+            <tr><th>従業員数</th><td th:text="${companyInfo.employees}">42名</td></tr>
+            <tr><th>所在地</th><td th:text="${companyInfo.address}">東京都八王子市東町11-2</td></tr>
+            <tr><th>電話番号</th><td th:text="${companyInfo.phone}">042-626-8800</td></tr>
+            <tr><th>Email</th><td><a th:href="'mailto:' + ${companyInfo.email}" th:text="${companyInfo.email}">info@shine-corp.co.jp</a></td></tr>
+            <tr><th>事業内容</th><td th:text="${companyInfo.businessDescription}">事業内容</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 <span th:text="${companyInfo.name}">株式会社SHINE</span>. All Rights Reserved.</p>
+        <p style="font-size: 0.8em; margin-top: 10px; color: rgba(255,255,255,0.5);">※20歳未満の方の飲酒は法律で禁止されています。</p>
+    </div>
+</footer>
+</body>
+</html>

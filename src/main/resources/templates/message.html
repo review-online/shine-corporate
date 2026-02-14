@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代表メッセージ | 株式会社SHINE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0A0E27 0%, #1A1A1A 100%);
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .message-section { padding: 100px 0; }
+        .ceo-profile {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: #F5F5F7;
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+        .ceo-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #D4AF37;
+        }
+        .message-text {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            white-space: pre-wrap;
+            margin-bottom: 60px;
+        }
+        .message-signature {
+            text-align: right;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 3px solid #D4AF37;
+        }
+        @media (max-width: 768px) {
+            .ceo-profile { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="/" th:text="${companyInfo.name}">SHINE</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">ホーム</a></li>
+                <li><a href="/message" class="nav-link active">代表メッセージ</a></li>
+                <li><a href="/contact" class="nav-link btn-contact">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <h1>代表メッセージ</h1>
+        <p>お酒を通じて、人生に輝きを</p>
+    </div>
+</section>
+
+<section class="message-section">
+    <div class="container">
+        <div class="ceo-profile">
+            <img th:src="@{/images/ceo-kobayashi.png}" alt="代表取締役 小林剛" class="ceo-photo">
+            <div class="ceo-info">
+                <h2 style="color: #D4AF37; font-size: 2rem; margin-bottom: 10px;">Message</h2>
+                <p style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;" th:text="${companyInfo.representative}">小林 剛</p>
+                <p style="color: #666; font-size: 1.1rem;" th:text="${companyInfo.name}">株式会社SHINE</p>
+            </div>
+        </div>
+
+        <div class="message-content" style="max-width: 900px; margin: 0 auto;">
+            <h3 th:text="${ceoMessage.title}" style="font-size: 1.8rem; color: #333; margin-bottom: 40px;">お酒を通じて、人生に輝きを</h3>
+
+            <div class="message-text" th:text="${ceoMessage.content}">
+                メッセージ本文
+            </div>
+
+            <div class="message-signature">
+                <p th:text="${ceoMessage.signature}">株式会社SHINE 代表取締役</p>
+                <p style="font-size: 2rem; font-weight: 700; margin-top: 10px;" th:text="${ceoMessage.name}">小林 剛</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 <span th:text="${companyInfo.name}">株式会社SHINE</span>. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
