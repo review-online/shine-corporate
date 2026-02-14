@@ -1,0 +1,17 @@
+# ビルド不要ファイル
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE設定
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# システムファイル
+.DS_Store
+Thumbs.db
+
+# Git関連
+.git/
+.gitignore
