@@ -477,3 +477,206 @@ section {
         padding: 15px 0;
     }
 }
+/* ========================================
+   スマホ・タブレット完全対応版
+   ======================================== */
+
+/* タブレット対応（768px以下） */
+@media (max-width: 768px) {
+    /* 基本設定 */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* ヘッダー調整 */
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo h1 a {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        display: block;
+        text-align: center;
+    }
+
+    /* ヒーローセクション */
+    .hero {
+        min-height: 70vh; /* heightから変更 */
+        padding-top: 100px; /* ヘッダー分の余白 */
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+
+    .hero-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 15px 25px;
+    }
+
+    /* セクション調整 */
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 50px;
+    }
+
+    /* 企業理念 */
+    .philosophy-statement h3 {
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+
+    .philosophy-statement p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    /* 事業内容 */
+    .business-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .business-content {
+        padding: 30px 20px;
+    }
+
+    .business-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .business-content p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* 会社概要テーブル - 適切なレスポンシブ対応 */
+    .company-table {
+        font-size: 0.9rem;
+    }
+
+    .company-table th,
+    .company-table td {
+        padding: 15px 12px;
+        font-size: 0.85rem;
+    }
+
+    .company-table th {
+        width: 35%;
+    }
+}
+
+/* スマートフォン対応（480px以下） */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle,
+    .hero-tagline {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .philosophy-statement h3 {
+        font-size: 1.5rem;
+    }
+
+    .business-icon {
+        font-size: 3rem;
+    }
+
+    .business-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .business-content h4 {
+        font-size: 1rem;
+    }
+
+    /* テーブルをカード形式に変更（見やすさ重視） */
+    .company-table {
+        border: none;
+        box-shadow: none;
+    }
+
+    .company-table tr {
+        display: block;
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .company-table th,
+    .company-table td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        border: none;
+    }
+
+    .company-table th {
+        background: var(--primary-gold);
+        color: white;
+        padding: 12px 15px;
+        font-weight: 600;
+        border-radius: 0;
+    }
+
+    .company-table td {
+        padding: 15px;
+        background: white;
+    }
+}
+
+/* 横向き表示対応 */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+}
