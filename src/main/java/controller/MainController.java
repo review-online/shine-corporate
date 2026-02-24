@@ -20,7 +20,7 @@ public class MainController {
     public String home(Model model) {
         model.addAttribute("companyInfo", contentService.getCompanyInfo());
         model.addAttribute("businesses", contentService.getBusinessDetails());
-        model.addAttribute("pageTitle", "株式会社SHINE | お酒を通じて豊かな時間を創造");
+        model.addAttribute("pageTitle", "株式会社SHINE | 八王子のプレミアムバー・ナイトクラブ【BAR SHINE・CLUB LUXE】");
         return "index";
     }
 
